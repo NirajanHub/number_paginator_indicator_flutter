@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:number_paginator/src/ui/widgets/inherited_number_paginator.dart';
-
+import 'package:number_paginator_indicator_flutter/src/ui/widgets/inherited_number_paginator.dart';
 class DropDownContent extends StatelessWidget {
   final int currentPage;
 

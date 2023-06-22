@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:number_paginator/src/ui/widgets/buttons/paginator_button.dart';
+import 'package:number_paginator_indicator_flutter/src/ui/widgets/buttons/paginator_button.dart';
 
 /// A paginator button that has an [Icon] as a child, instead of text. The icon
 /// scales with the available space, depending on the size of the button.
