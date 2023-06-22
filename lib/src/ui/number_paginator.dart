@@ -26,8 +26,8 @@ class NumberPaginator extends StatefulWidget {
   final NumberPaginatorContentBuilder? contentBuilder;
 
   final NumberPaginatorController? controller;
-  final IconData leftArrowIcon;
-  final IconData rightArrowIcon;
+  final Widget leftArrowIcon;
+  final Widget rightArrowIcon;
 
   /// Creates an instance of [NumberPaginator].
   const NumberPaginator({
@@ -38,8 +38,8 @@ class NumberPaginator extends StatefulWidget {
     this.config = const NumberPaginatorUIConfig(),
     this.contentBuilder,
     this.controller,
-    this.leftArrowIcon = Icons.chevron_left,
-    this.rightArrowIcon = Icons.chevron_right,
+    this.leftArrowIcon = const Icon(Icons.chevron_left),
+    this.rightArrowIcon = const Icon(Icons.chevron_right),
   })  : assert(initialPage >= 0),
         assert(initialPage <= numberPages - 1),
         super(key: key);
@@ -50,8 +50,8 @@ class NumberPaginator extends StatefulWidget {
 
 class NumberPaginatorState extends State<NumberPaginator> {
   late NumberPaginatorController _controller;
-  late IconData _leftArrowIcon;
-  late IconData _rightArrowIcon;
+  late Widget _leftArrowIcon;
+  late Widget _rightArrowIcon;
 
   @override
   void initState() {

@@ -4,7 +4,7 @@ import 'package:number_paginator_indicator_flutter/src/ui/widgets/buttons/pagina
 /// A paginator button that has an [Icon] as a child, instead of text. The icon
 /// scales with the available space, depending on the size of the button.
 class PaginatorIconButton extends StatelessWidget {
-  final IconData icon;
+  final Widget icon;
   final VoidCallback? onPressed;
 
   const PaginatorIconButton({
@@ -19,7 +19,7 @@ class PaginatorIconButton extends StatelessWidget {
       onPressed: onPressed,
       // size icon depending on available height
       child: FittedBox(
-        child: Icon(icon),
+        child: icon,
       ),
     );
   }
