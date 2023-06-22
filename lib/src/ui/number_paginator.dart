@@ -28,6 +28,8 @@ class NumberPaginator extends StatefulWidget {
   final NumberPaginatorContentBuilder? contentBuilder;
 
   final NumberPaginatorController? controller;
+  final IconData leftArrowIcon;
+  final IconData rightArrowIcon;
 
   /// Creates an instance of [NumberPaginator].
   const NumberPaginator({
@@ -38,6 +40,8 @@ class NumberPaginator extends StatefulWidget {
     this.config = const NumberPaginatorUIConfig(),
     this.contentBuilder,
     this.controller,
+    this.leftArrowIcon = Icons.chevron_left,
+    this.rightArrowIcon = Icons.chevron_right,
   })  : assert(initialPage >= 0),
         assert(initialPage <= numberPages - 1),
         super(key: key);
@@ -48,11 +52,14 @@ class NumberPaginator extends StatefulWidget {
 
 class NumberPaginatorState extends State<NumberPaginator> {
   late NumberPaginatorController _controller;
+  late IconData _leftArrowIcon;
+  late IconData _rightArrowIcon;
 
   @override
   void initState() {
     super.initState();
-
+    _leftArrowIcon = widget.leftArrowIcon;
+    _rightArrowIcon = widget.rightArrowIcon;
     _controller = widget.controller ?? NumberPaginatorController();
     _controller.currentPage = widget.initialPage;
     _controller.addListener(() {
@@ -74,14 +81,14 @@ class NumberPaginatorState extends State<NumberPaginator> {
           children: [
             PaginatorIconButton(
               onPressed: _controller.currentPage > 0 ? _controller.prev : null,
-              icon: Icons.chevron_left,
+              icon: _leftArrowIcon,
             ),
             ..._buildCenterContent(),
             PaginatorIconButton(
               onPressed: _controller.currentPage < widget.numberPages - 1
                   ? _controller.next
                   : null,
-              icon: Icons.chevron_right,
+              icon: _rightArrowIcon,
             ),
           ],
         ),
