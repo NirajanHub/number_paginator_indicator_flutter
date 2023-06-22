@@ -1,6 +1,6 @@
 name: number_paginator_indicator_flutter
 description: A Flutter paginator widget for switching between page numbers.
-version: 0.2.3
+version: 0.0.1
 homepage: https://github.com/NirajanHub/number_paginator_indicator_flutter.git
 
 environment:
