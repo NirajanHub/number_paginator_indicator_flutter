@@ -18,7 +18,10 @@ class PaginatorIconButton extends StatelessWidget {
     return PaginatorButton(
       onPressed: onPressed,
       // size icon depending on available height
-      child: icon,
+      child: Container(
+        color: Colors.amber,
+        child: icon,
+      ),
     );
   }
 }
