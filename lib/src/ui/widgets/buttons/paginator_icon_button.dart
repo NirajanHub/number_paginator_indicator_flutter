@@ -18,9 +18,7 @@ class PaginatorIconButton extends StatelessWidget {
     return PaginatorButton(
       onPressed: onPressed,
       // size icon depending on available height
-      child: FittedBox(
-        child: icon,
-      ),
+      child: icon,
     );
   }
 }
